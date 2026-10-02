@@ -1,17 +1,4 @@
 {
-  "docs.chain.link/samples/DataFeeds/DataConsumerV3.sol": {
-    "@chainlink/contracts@1.5.0/src/v0.8/shared/interfaces/AggregatorV3Interface.sol": ".deps/npm/@chainlink/contracts@1.5.0/src/v0.8/shared/interfaces/AggregatorV3Interface.sol",
-    "__sources__": {
-      "docs.chain.link/samples/DataFeeds/DataConsumerV3.sol": {
-        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.7;\n\nimport {AggregatorV3Interface} from \"@chainlink/contracts@1.5.0/src/v0.8/shared/interfaces/AggregatorV3Interface.sol\";\n\n/**\n * THIS IS AN EXAMPLE CONTRACT THAT USES HARDCODED\n * VALUES FOR CLARITY.\n * THIS IS AN EXAMPLE CONTRACT THAT USES UN-AUDITED CODE.\n * DO NOT USE THIS CODE IN PRODUCTION.\n */\n\n/**\n * If you are reading data feeds on L2 networks, you must\n * check the latest answer from the L2 Sequencer Uptime\n * Feed to ensure that the data is accurate in the event\n * of an L2 sequencer outage. See the\n * https://docs.chain.link/data-feeds/l2-sequencer-feeds\n * page for details.\n */\ncontract DataConsumerV3 {\n  AggregatorV3Interface internal dataFeed;\n\n  /**\n   * Network: Sepolia\n   * Aggregator: BTC/USD\n   * Address: 0x1b44F3514812d835EB1BDB0acB33d3fA3351Ee43\n   */\n  constructor() {\n    dataFeed = AggregatorV3Interface(0x1b44F3514812d835EB1BDB0acB33d3fA3351Ee43);\n  }\n\n  /**\n   * Returns the latest answer.\n   */\n  function getChainlinkDataFeedLatestAnswer() public view returns (int256) {\n    // prettier-ignore\n    (\n      /* uint80 roundId */\n      ,\n      int256 answer,\n      /*uint256 startedAt*/\n      ,\n      /*uint256 updatedAt*/\n      ,\n      /*uint80 answeredInRound*/\n    ) = dataFeed.latestRoundData();\n    return answer;\n  }\n}\n",
-        "file": "docs.chain.link/samples/DataFeeds/DataConsumerV3.sol"
-      },
-      "@chainlink/contracts@1.5.0/src/v0.8/shared/interfaces/AggregatorV3Interface.sol": {
-        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\n// solhint-disable-next-line interface-starts-with-i\ninterface AggregatorV3Interface {\n  function decimals() external view returns (uint8);\n\n  function description() external view returns (string memory);\n\n  function version() external view returns (uint256);\n\n  function getRoundData(\n    uint80 _roundId\n  ) external view returns (uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound);\n\n  function latestRoundData()\n    external\n    view\n    returns (uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound);\n}\n",
-        "file": "@chainlink/contracts@1.5.0/src/v0.8/shared/interfaces/AggregatorV3Interface.sol"
-      }
-    }
-  },
   "PriceConvertor.sol": {
     "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol": ".deps/npm/@chainlink/contracts@1.5.0/src/v0.8/shared/interfaces/AggregatorV3Interface.sol",
     "__sources__": {
@@ -25,6 +12,27 @@
       }
     }
   },
+  "docs.chain.link/samples/DataFeeds/DataConsumerV3.sol": {
+    "@chainlink/contracts@1.5.0/src/v0.8/shared/interfaces/AggregatorV3Interface.sol": ".deps/npm/@chainlink/contracts@1.5.0/src/v0.8/shared/interfaces/AggregatorV3Interface.sol",
+    "__sources__": {
+      "docs.chain.link/samples/DataFeeds/DataConsumerV3.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.7;\n\nimport {AggregatorV3Interface} from \"@chainlink/contracts@1.5.0/src/v0.8/shared/interfaces/AggregatorV3Interface.sol\";\n\n/**\n * THIS IS AN EXAMPLE CONTRACT THAT USES HARDCODED\n * VALUES FOR CLARITY.\n * THIS IS AN EXAMPLE CONTRACT THAT USES UN-AUDITED CODE.\n * DO NOT USE THIS CODE IN PRODUCTION.\n */\n\n/**\n * If you are reading data feeds on L2 networks, you must\n * check the latest answer from the L2 Sequencer Uptime\n * Feed to ensure that the data is accurate in the event\n * of an L2 sequencer outage. See the\n * https://docs.chain.link/data-feeds/l2-sequencer-feeds\n * page for details.\n */\ncontract DataConsumerV3 {\n  AggregatorV3Interface internal dataFeed;\n\n  /**\n   * Network: Sepolia\n   * Aggregator: BTC/USD\n   * Address: 0x1b44F3514812d835EB1BDB0acB33d3fA3351Ee43\n   */\n  constructor() {\n    dataFeed = AggregatorV3Interface(0x1b44F3514812d835EB1BDB0acB33d3fA3351Ee43);\n  }\n\n  /**\n   * Returns the latest answer.\n   */\n  function getChainlinkDataFeedLatestAnswer() public view returns (int256) {\n    // prettier-ignore\n    (\n      /* uint80 roundId */\n      ,\n      int256 answer,\n      /*uint256 startedAt*/\n      ,\n      /*uint256 updatedAt*/\n      ,\n      /*uint80 answeredInRound*/\n    ) = dataFeed.latestRoundData();\n    return answer;\n  }\n}\n",
+        "file": "docs.chain.link/samples/DataFeeds/DataConsumerV3.sol"
+      },
+      "@chainlink/contracts@1.5.0/src/v0.8/shared/interfaces/AggregatorV3Interface.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\n// solhint-disable-next-line interface-starts-with-i\ninterface AggregatorV3Interface {\n  function decimals() external view returns (uint8);\n\n  function description() external view returns (string memory);\n\n  function version() external view returns (uint256);\n\n  function getRoundData(\n    uint80 _roundId\n  ) external view returns (uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound);\n\n  function latestRoundData()\n    external\n    view\n    returns (uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound);\n}\n",
+        "file": "@chainlink/contracts@1.5.0/src/v0.8/shared/interfaces/AggregatorV3Interface.sol"
+      }
+    }
+  },
+  "FundMe/FallbackExample.sol": {
+    "__sources__": {
+      "FundMe/FallbackExample.sol": {
+        "content": "//SPDX-License-Identifier:MIY\r\n\r\npragma solidity^0.8.18;\r\n\r\ncontract FallbackExample {\r\n    uint256 public result;\r\n\r\n    receive() external payable { \r\n        result = 1;\r\n\r\n    }\r\n\r\n    fallback() external payable {\r\n        result = 2;\r\n        \r\n    }\r\n\r\n}",
+        "file": "FundMe/FallbackExample.sol"
+      }
+    }
+  },
   "FundMe/PriceConvertor.sol": {
     "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol": ".deps/npm/@chainlink/contracts@1.5.0/src/v0.8/shared/interfaces/AggregatorV3Interface.sol"
   },
@@ -32,7 +40,7 @@
     "./PriceConvertor.sol": "FundMe/PriceConvertor.sol",
     "__sources__": {
       "FundMe/FundMe.sol": {
-        "content": "// Task\r\n// Get Funds from user\r\n// withdraw Funds\r\n// Set a Minimum amount for user to spend\r\n\r\n//SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.19;\r\n\r\nimport {PriceConvertor} from \"./PriceConvertor.sol\";\r\n\r\nuint256 constant minimumUSD = 5e18;\r\n\r\n\r\n// address constant _to = 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2;\r\ncontract FundMe {\r\n\r\nusing PriceConvertor for uint256;\r\n\r\naddress[] public funders;\r\nmapping(address funder => uint256 amountFunded) public addressToAmountFunded;\r\n\r\n\r\n    function deposite() public payable {\r\n\r\n        // Allow user to send money\r\n        // Set a minimum amount to send\r\n        // User have to send minimum amount as 5$\r\n        require(msg.value.priceConversion() >= minimumUSD , \"Need to send a minimum amount of 1 ETH\");\r\n        funders.push(msg.sender);\r\n        addressToAmountFunded[msg.sender] = addressToAmountFunded[msg.sender] + msg.value;\r\n    }\r\n\r\n    function withdraw() public payable{\r\n        // address payable _to = address(FundMe);\r\n        // _to.transfer(msg.value);\r\n    }\r\n\r\n\r\n}",
+        "content": "// Task\r\n// Get Funds from user\r\n// withdraw Funds\r\n// Set a Minimum amount for user to spend\r\n\r\n//SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.19;\r\n\r\nimport {PriceConvertor} from \"./PriceConvertor.sol\";\r\n\r\nuint256 constant minimumUSD = 5e18;\r\n\r\n\r\n// address constant _to = 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2;\r\ncontract FundMe {\r\n\r\nusing PriceConvertor for uint256;\r\n\r\naddress[] public funders;\r\nmapping(address funder => uint256 amountFunded) public addressToAmountFunded;\r\n\r\naddress public owner;\r\n\r\nconstructor() {\r\n    owner = msg.sender;\r\n}\r\n\r\n    function deposite() public payable {\r\n\r\n        // Allow user to send money\r\n        // Set a minimum amount to send\r\n        // User have to send minimum amount as 5$\r\n        require(msg.value.priceConversion() >= minimumUSD , \"Need to send a minimum amount of 1 ETH\");\r\n        funders.push(msg.sender);\r\n        addressToAmountFunded[msg.sender] += msg.value;\r\n    }\r\n\r\n    function withdraw() public payable{\r\n        \r\n        require(msg.sender == owner, \"Only owner can withdraw\");\r\n\r\n        for(uint256 funderIndex = 0; funderIndex > funders.length; funderIndex++) {\r\n            address funder = funders[funderIndex];\r\n            addressToAmountFunded[funder] = 0;\r\n        }\r\n        funders = new address[](0);\r\n        \r\n        (bool success,) = payable(msg.sender).call{value: address(this).balance}(\"\");\r\n        require(success, \"Failed to send ETH\");\r\n\r\n    }\r\n\r\n    modifier onlyOwner() {\r\n        require(owner == msg.sender, \"Only owner can call this function\");\r\n        _;\r\n    }\r\n\r\n    // What if someone sends funds without calling the function itself.\r\n    // There are Two Special functions in solidity for this situation which are\r\n     // 1. receive() - 2. fallback() - These are special functions which are called when someone sends funds to the contract without calling any function.\r\n     // receive() function is called when someone sends funds to the contract without calling any function and the function is payable.\r\n     // fallback() function is called when someone sends funds to the contract without calling any function and the function is not payable.\r\n     // fallback() function is also called when someone calls a function which does not exist\r\n\r\n     receive () external payable {\r\n        deposite();\r\n     }\r\n\r\n     fallback() external payable {\r\n        deposite();\r\n      }\r\n}",
         "file": "FundMe/FundMe.sol"
       },
       "FundMe/PriceConvertor.sol": {

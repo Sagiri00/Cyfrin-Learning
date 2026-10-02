@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.34+commit.80d5c536"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"FundMe/FallbackExample.sol": "fallbackExample"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"FundMe/FallbackExample.sol": {
+			"keccak256": "0x833181a4771aec20b335023b28f256f6589df381d2ed0fde0ce5225f286acb8f",
+			"license": "MIY",
+			"urls": [
+				"bzz-raw://0445038c6cb30e962b6fd674292ce19ddb9633259c054a2e74d0934c34fe1609",
+				"dweb:/ipfs/QmTpAzmrCTHAbTVRBpX6kmjY3RTJKRqco4y3y1m6A8nhoN"
+			]
+		}
+	},
+	"version": 1
+}
